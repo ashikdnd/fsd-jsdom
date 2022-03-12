@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS DOM</title>
+	<script src="js/jquery.min.js"></script>
+	<script src="plugins/typeahead/jquery.typeahead.min.js"></script>
+	<script>
+		$(function() {
+			let counter = 3;
+			$('#counter-value').text(counter);
+			const timer = setInterval(function(){
+				counter--;
+				if (counter == -1) {
+					alert('Time is UP!!!!!!');
+					clearInterval(timer);
+					return;
+				}
+				$('#counter-value').text(counter);
+			}, 1000);
+
+			console.log(timer)
+
+			setTimeout(function() {
+				console.log(timer)
+			}, 5000)
+		})
+	</script>
+	<style>
+		html, body {
+			width:  100%;
+			height:  100%;
+		}
+	</style>
+</head>
+<body>
+	
+
+	<div style="width: auto; height: 100px; margin: 0 auto; text-align: center;">
+		<div style="padding: 20px; background: #F5F6F7;">
+			<h1>STOPWATCH</h1>
+			<h3 id="counter-value"></h3>
+		</div>
+	</div>
+
+	
+</body>
+</html>
